@@ -18,4 +18,10 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
       - if: steps.publish.outputs.type != 'none'
         run: |
-          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
+          echo "Npm version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
+      - name: Release
+        uses: fnkr/github-action-ghr@v1
+        if: steps.publish.outputs.type != 'none'
+        env:
+          GHR_PATH: ./
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
