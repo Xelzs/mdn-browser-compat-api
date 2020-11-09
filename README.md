@@ -1,6 +1,7 @@
 # @xelzs/mdn-browser-compat-api
 
 ![Test](https://github.com/xelzs/mdn-browser-compat-api/workflows/test/badge.svg)
+![Publish](https://github.com/xelzs/mdn-browser-compat-api/workflows/publish/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/Xelzs/mdn-browser-compat-api/badge.svg?branch=develop)](https://coveralls.io/github/Xelzs/mdn-browser-compat-api?branch=develop)
 
 Request the @mdn/browser-compat-data (used by caniuse.com)

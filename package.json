@@ -18,6 +18,25 @@
   "bugs": {
     "url": "https://github.com/Xelzs/mdn-browser-compat-api/issues"
   },
+  "files": [
+    "src",
+    "test",
+    "data",
+    "LICENSE",
+    "README",
+    "CHANGELOG"
+  ],
+  "keywords": [
+    "bcd",
+    "browser-compat-data",
+    "browser",
+    "compatibility",
+    "data",
+    "mdn",
+    "xelzs",
+    "api",
+    "browser-compat-api"
+  ],
   "dependencies": {
     "@mdn/browser-compat-data": "^2.0.5",
     "object-path": "^0.11.5"
