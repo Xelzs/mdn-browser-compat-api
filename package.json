@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "node generate.js --generate",
+    "generate": "node src/generate.js --generate",
     "test": "tap",
     "postinstall": "echo \"[MDNBrowserCompatApi] Generate data...\" && npm run generate"
   },

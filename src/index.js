@@ -1,6 +1,6 @@
 const BCD = require('@mdn/browser-compat-data');
-const WHITELIST = require('./data/whitelist.json');
-const FEATURES = require('./data/features.json');
+const WHITELIST = require('../data/whitelist.json');
+const FEATURES = require('../data/features.json');
 const objectPath = require('object-path');
 
 const Generate = require('./generate');

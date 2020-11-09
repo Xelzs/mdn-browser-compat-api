@@ -1,4 +1,4 @@
-const MDNBrowserCompatApi = require('../index');
+const MDNBrowserCompatApi = require('../src/index');
 const tap = require('tap');
 
 tap.test('getFeatures()', (test) => {

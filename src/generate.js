@@ -4,7 +4,7 @@ const BCD = require('@mdn/browser-compat-data');
 const bcdPath = path.dirname(require.resolve('@mdn/browser-compat-data'));
 
 const Generate = (() => {
-  const outputDir = path.resolve(__dirname, 'data');
+  const outputDir = path.resolve(__dirname, '../data');
 
   const baseDir = [
     'api',
@@ -47,7 +47,7 @@ const Generate = (() => {
   };
 
   const getWhitelist = () => {
-    return fs.readFileSync('data/whitelist.json');
+    return fs.readFileSync(path.resolve(outputDir, 'whitelist.json'));
   };
 
   const generateFeatureList = (folder = '', obj = BCD, path = '') => {
