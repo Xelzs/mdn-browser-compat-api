@@ -1,5 +1,5 @@
 const BCD = require('@mdn/browser-compat-data');
-const WHITELIST = require('../data/whitelist.json');
+const FOLDERS = require('../data/folders.json');
 const FEATURES = require('../data/features.json');
 const objectPath = require('object-path');
 
@@ -13,11 +13,11 @@ const MDNBrowserCompatApi = (() => {
     if (!folder) {
       return FEATURES;
     }
-    return FEATURES.filter((feature) => feature.split('.')[0] === folder);
+    return FEATURES.filter((feature) => feature.includes(folder));
   };
 
   /* istanbul ignore next */
-  const getWhitelist = () => WHITELIST;
+  const getFolders = () => FOLDERS;
 
   const getBrowsers = () => BCD.browsers;
 
@@ -40,7 +40,7 @@ const MDNBrowserCompatApi = (() => {
   return {
     find,
     getFeatures,
-    getWhitelist,
+    getFolders,
     getBrowsers,
     get,
     updateData,

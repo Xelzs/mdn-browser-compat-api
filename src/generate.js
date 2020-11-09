@@ -46,15 +46,15 @@ const Generate = (() => {
     return res.sort();
   };
 
-  const getWhitelist = () => {
-    return fs.readFileSync(path.resolve(outputDir, 'whitelist.json'));
+  const getFolders = () => {
+    return fs.readFileSync(path.resolve(outputDir, 'folders.json'));
   };
 
   const generateFeatureList = (folder = '', obj = BCD, path = '') => {
     path ? '' : (path = folder);
     let features = [];
 
-    const WHITELIST = getWhitelist();
+    const WHITELIST = getFolders();
 
     const keyList = Object.keys(folder ? obj[folder] : obj);
     keyList.map((key) => {
@@ -76,7 +76,7 @@ const Generate = (() => {
 
     fs.existsSync(outputDir) ? '' : fs.mkdirSync(outputDir);
 
-    fs.writeFileSync(path.resolve(outputDir, 'whitelist.json'), whitelist);
+    fs.writeFileSync(path.resolve(outputDir, 'folders.json'), whitelist);
 
     const features = JSON.stringify(generateFeatureList());
 

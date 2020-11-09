@@ -1,8 +1,8 @@
 {
   "name": "@xelzs/mdn-browser-compat-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Request the @mdn/browser-compat-data (used by caniuse.com)",
+  "main": "src/index.js",
   "scripts": {
     "generate": "node src/generate.js --generate",
     "test": "tap",
@@ -10,6 +10,14 @@
   },
   "author": "Axel SIMONET",
   "license": "MIT",
+  "homepage": "https://github.com/Xelzs/mdn-browser-compat-api#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xelzs/mdn-browser-compat-api"
+  },
+  "bugs": {
+    "url": "https://github.com/Xelzs/mdn-browser-compat-api/issues"
+  },
   "dependencies": {
     "@mdn/browser-compat-data": "^2.0.5",
     "object-path": "^0.11.5"

@@ -10,7 +10,7 @@ tap.test('generate', (test) => {
     Generate.generateToFile();
 
     if (
-      fs.existsSync(path.resolve(outputDir, 'whitelist.json')) &&
+      fs.existsSync(path.resolve(outputDir, 'folders.json')) &&
       fs.existsSync(path.resolve(outputDir, 'features.json'))
     ) {
       subtest.pass();
@@ -31,7 +31,7 @@ tap.test('generate', (test) => {
     Generate.generateToFile();
 
     if (
-      fs.existsSync(path.resolve(outputDir, 'whitelist.json')) &&
+      fs.existsSync(path.resolve(outputDir, 'folders.json')) &&
       fs.existsSync(path.resolve(outputDir, 'features.json'))
     ) {
       subtest.pass();
