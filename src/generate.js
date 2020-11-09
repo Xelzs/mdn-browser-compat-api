@@ -74,9 +74,7 @@ const Generate = (() => {
   const generateToFile = () => {
     const whitelist = JSON.stringify(generateWhitelist());
 
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir);
-    }
+    fs.existsSync(outputDir) ? '' : fs.mkdirSync(outputDir);
 
     fs.writeFileSync(path.resolve(outputDir, 'whitelist.json'), whitelist);
 
@@ -92,6 +90,7 @@ const Generate = (() => {
   };
 })();
 
+/* istanbul ignore next */
 process.argv[2] === '--generate' ? Generate.generateToFile() : '';
 
 module.exports = Generate;
