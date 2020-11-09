@@ -3,10 +3,8 @@ const path = require('path');
 const BCD = require('@mdn/browser-compat-data');
 const bcdPath = path.dirname(require.resolve('@mdn/browser-compat-data'));
 
-const WHITELIST = require('./data/whitelist.json');
-
 const Generate = (() => {
-  const outputDir = path.resolve(__dirname, 'data');
+  const outputDir = path.resolve(__dirname, '../data');
 
   const baseDir = [
     'api',
@@ -48,9 +46,15 @@ const Generate = (() => {
     return res.sort();
   };
 
+  const getFolders = () => {
+    return fs.readFileSync(path.resolve(outputDir, 'folders.json'));
+  };
+
   const generateFeatureList = (folder = '', obj = BCD, path = '') => {
     path ? '' : (path = folder);
     let features = [];
+
+    const WHITELIST = getFolders();
 
     const keyList = Object.keys(folder ? obj[folder] : obj);
     keyList.map((key) => {
@@ -70,11 +74,9 @@ const Generate = (() => {
   const generateToFile = () => {
     const whitelist = JSON.stringify(generateWhitelist());
 
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir);
-    }
+    fs.existsSync(outputDir) ? '' : fs.mkdirSync(outputDir);
 
-    fs.writeFileSync(path.resolve(outputDir, 'whitelist.json'), whitelist);
+    fs.writeFileSync(path.resolve(outputDir, 'folders.json'), whitelist);
 
     const features = JSON.stringify(generateFeatureList());
 
@@ -88,6 +90,7 @@ const Generate = (() => {
   };
 })();
 
-Generate.generateToFile();
+/* istanbul ignore next */
+process.argv[2] === '--generate' ? Generate.generateToFile() : '';
 
 module.exports = Generate;
