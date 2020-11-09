@@ -1,0 +1,16 @@
+{
+  "name": "@xelzs/mdn-browser-compat-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "generate": "node generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Axel SIMONET",
+  "license": "MIT",
+  "dependencies": {
+    "@mdn/browser-compat-data": "^2.0.3"
+  }
+}
