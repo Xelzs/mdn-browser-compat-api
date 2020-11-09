@@ -3,8 +3,6 @@ const path = require('path');
 const BCD = require('@mdn/browser-compat-data');
 const bcdPath = path.dirname(require.resolve('@mdn/browser-compat-data'));
 
-const WHITELIST = require('./data/whitelist.json');
-
 const Generate = (() => {
   const outputDir = path.resolve(__dirname, 'data');
 
@@ -48,9 +46,15 @@ const Generate = (() => {
     return res.sort();
   };
 
+  const getWhitelist = () => {
+    return fs.readFileSync('data/whitelist.json');
+  };
+
   const generateFeatureList = (folder = '', obj = BCD, path = '') => {
     path ? '' : (path = folder);
     let features = [];
+
+    const WHITELIST = getWhitelist();
 
     const keyList = Object.keys(folder ? obj[folder] : obj);
     keyList.map((key) => {
@@ -88,6 +92,6 @@ const Generate = (() => {
   };
 })();
 
-Generate.generateToFile();
+process.argv[2] === '--generate' ? Generate.generateToFile() : '';
 
 module.exports = Generate;

@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "generate": "node generate.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "node generate.js --generate",
+    "test": "tap",
+    "postinstall": "echo \"[MDNBrowserCompatApi] Generate data...\" && npm run generate"
   },
   "author": "Axel SIMONET",
   "license": "MIT",
   "dependencies": {
-    "@mdn/browser-compat-data": "^2.0.3"
+    "@mdn/browser-compat-data": "^2.0.5",
+    "object-path": "^0.11.5"
+  },
+  "devDependencies": {
+    "tap": "^14.10.8"
   }
 }
