@@ -1,3 +1,8 @@
+# 1.1.0 - 2021-10-25
+
+- Added typings (thanks @Rapougnac)
+- Update dependencies
+
 # 1.0.1 - 2020-11-09
 
 Fix deployment.
