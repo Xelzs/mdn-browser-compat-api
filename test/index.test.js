@@ -47,7 +47,7 @@ tap.equal(MDNBrowserCompatApi.getBrowsers().chrome.name, 'Chrome');
 tap.test('get()', (test) => {
   test.test("should return the BCD object of 'css.properties.width.fit-content'", (subtest) => {
     const feature = MDNBrowserCompatApi.get('css.properties.width.fit-content');
-    subtest.equal(feature.length, 1);
+    subtest.equal(feature.length, 2);
     subtest.end();
   });
 
